@@ -1,3 +1,7 @@
+extern crate libtruth;
+
+use libtruth::read_table;
+
 fn main() {
-    println!("Hello, world!");
+    read_table();
 }
