@@ -1,0 +1,6 @@
+[package]
+name = "truth-table"
+version = "0.0.0"
+authors = ["Caleb Smith <karagenit@outlook.com>"]
+
+[dependencies]
