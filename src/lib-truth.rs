@@ -8,5 +8,9 @@ pub fn read_table() {
     io::stdin().read_line(&mut input)
         .expect("Failed to read line");
 
-    println!("{}", input);
+    let var_cnt: u64 = input.trim().parse().expect("Enter a number!");
+
+    for n in 0..var_cnt {
+        println!("{}", n);
+    }
 }
