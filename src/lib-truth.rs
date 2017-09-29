@@ -11,6 +11,6 @@ pub fn read_table() {
     let var_cnt: u64 = input.trim().parse().expect("Enter a number!");
 
     for n in 0..var_cnt {
-        println!("{}", n);
+        println!("|{}|?|", format!("{:04b}", n));
     }
 }
