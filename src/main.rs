@@ -3,5 +3,6 @@ extern crate libtruth;
 use libtruth::read_table;
 
 fn main() {
-    read_table();
+    let outputs = read_table();
+    println!("{:?}", outputs);
 }

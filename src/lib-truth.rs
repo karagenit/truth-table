@@ -1,7 +1,7 @@
 use std::io;
 use std::io::prelude::*;
 
-pub fn read_table() {
+pub fn read_table() -> Box<[bool]> {
     println!("Enter Number of Inputs: ");
 
     let mut input = String::new();
@@ -26,5 +26,5 @@ pub fn read_table() {
         outputs[n] = input.trim().parse::<u32>().expect("Enter 1 or 0") > 0;
     }
 
-    println!("{:?}", outputs);
+    return outputs;
 }
