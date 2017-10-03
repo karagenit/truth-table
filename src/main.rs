@@ -17,9 +17,9 @@ fn main() {
 
     //TODO check 26 >= inputs > 0
 
+    println!("\nTruth Table");
     let outputs = read_table(inputs);
-    println!("{:?}", outputs);
 
     let minterms = get_minterms(inputs, outputs);
-    println!("{:?}", minterms);
+    println!("\nMinterm Expression: {}", minterms);
 }
