@@ -31,11 +31,11 @@ pub fn get_minterms(inputs: u32, outputs: Box<[bool]>) -> String {
             for l in 0..inputs {
                 let b = inputs - 1 - l;
                 let bit = (i >> b) & 0b1;
-                if bit == 0 {
-                    str.push_str("!");
-                }
                 let c = 65u8 + (l as u8);
                 str.push_str(&((c as char).to_string()));
+                if bit == 0 {
+                    str.push_str("\u{0304}");
+                }
             }
         }
     }
