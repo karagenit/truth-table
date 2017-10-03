@@ -1,15 +1,7 @@
 use std::io;
 use std::io::prelude::*;
 
-pub fn read_table() -> Box<[bool]> {
-    println!("Enter Number of Inputs: ");
-
-    let mut input = String::new();
-
-    io::stdin().read_line(&mut input)
-        .expect("Failed to read line");
-
-    let inputs: u32 = input.trim().parse::<u32>().expect("Enter a number!");
+pub fn read_table(inputs: u32) -> Box<[bool]> {
 
     let combos: usize = 2u32.pow(inputs) as usize;
 
@@ -20,7 +12,7 @@ pub fn read_table() -> Box<[bool]> {
         io::stdout().flush()
             .ok().expect("Cannot flush");
 
-        input = String::new(); //apparently read_line() appends to the string
+        let mut input = String::new(); //apparently read_line() appends to the string
         io::stdin().read_line(&mut input)
             .expect("Failed to read line");
         outputs[n] = input.trim().parse::<u32>().expect("Enter 1 or 0") > 0;
