@@ -3,6 +3,7 @@ extern crate libtruth;
 use std::io;
 
 use libtruth::read_table;
+use libtruth::get_minterms;
 
 fn main() {
 
@@ -17,6 +18,8 @@ fn main() {
     //TODO check 26 >= inputs > 0
 
     let outputs = read_table(inputs);
-
     println!("{:?}", outputs);
+
+    let minterms = get_minterms(inputs, outputs);
+    println!("{:?}", minterms);
 }

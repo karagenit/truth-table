@@ -20,3 +20,29 @@ pub fn read_table(inputs: u32) -> Box<[bool]> {
 
     return outputs;
 }
+
+pub fn get_minterms(inputs: u32, outputs: Box<[bool]>) -> String {
+    let str = String::new();
+    for i in 0..outputs.len() {
+        if outputs[i] {
+            for l in 0..inputs {
+                let b = inputs - 1 - l;
+                let bit = (i >> b) & 0b1;
+                //if bit == 0, append !
+                //append ASCII 65 + l
+            }
+        }
+    }
+    return str;
+}
+
+//str.push_str
+
+/* Row example:
+ * 101 | 1
+ *
+ * for each row in the table
+ * if this row's output is true, we're gonna add the minterm
+ * start with the highest bit (e.g. bit #[input-1]) and go to the lowest (bit #0)
+ * if this bit is zero, append '!'; always append corresponding letter (A, B, ...)
+ */
