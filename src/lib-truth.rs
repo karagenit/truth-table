@@ -22,21 +22,25 @@ pub fn read_table(inputs: u32) -> Box<[bool]> {
 }
 
 pub fn get_minterms(inputs: u32, outputs: Box<[bool]>) -> String {
-    let str = String::new();
+    let mut str = String::new();
     for i in 0..outputs.len() {
         if outputs[i] {
+            if str.len() > 0 {
+                str.push_str("+");
+            }
             for l in 0..inputs {
                 let b = inputs - 1 - l;
                 let bit = (i >> b) & 0b1;
-                //if bit == 0, append !
-                //append ASCII 65 + l
+                if bit == 0 {
+                    str.push_str("!");
+                }
+                let c = 65u8 + (l as u8);
+                str.push_str(&((c as char).to_string()));
             }
         }
     }
     return str;
 }
-
-//str.push_str
 
 /* Row example:
  * 101 | 1
